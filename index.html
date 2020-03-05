@@ -15,22 +15,70 @@
     <script src="app.js"></script>
   </head>
   <body>
-    <!-- TestAngular1 -->
-	<div ng-app="">
-	<p>Input something in the input box:</p>
-	<p>Name : <input type="text" ng-model="name" placeholder="Enter name here"></p>
-	<h1>Hello {{name}}</h1>
+	<div class="container">
+	<br>
+	<br>
+		<!-- TestAngular5 -->
+		<div ng-controller="EditableFormCtrl" id="EditableFormCtrl">
+		  <form editable-form name="editableForm" onaftersave="saveUser()">
+			<div>
+			  <!-- editable username (text with validation) -->
+			  <span class="title">User name: </span>
+			  <span editable-text="user.name" e-name="name" onbeforesave="checkName($data)" e-required>{{ user.name || 'empty' }}</span>
+			</div> 
+
+			<div>
+			  <!-- editable status (select-local) -->
+			  <span class="title">Status: </span>
+			  <span editable-select="user.status" e-name="status" e-ng-options="s.value as s.text for s in statuses">
+				{{ (statuses | filter:{value: user.status})[0].text || 'Not set' }}
+			  </span>
+			</div>  
+
+			<div>
+			  <!-- editable group (select-remote) -->
+			  <span class="title">Group: </span>
+			  <span editable-select="user.group" e-name="group" onshow="loadGroups()" e-ng-options="g.id as g.text for g in groups">
+				{{ showGroup() }}
+			  </span>
+			</div>
+
+			<div class="buttons">
+			  <!-- button to show form -->
+			  <button type="button" class="btn btn-primary" ng-click="editableForm.$show()" ng-show="!editableForm.$visible">
+				Edit
+			  </button>
+			  <!-- buttons to submit / cancel form -->
+			  <span ng-show="editableForm.$visible">
+				<button type="submit" class="btn btn-success" ng-disabled="editableForm.$waiting">
+				  Save
+				</button>
+				<button type="button" class="btn btn-danger" ng-disabled="editableForm.$waiting" ng-click="editableForm.$cancel()">
+				  Cancel
+				</button>
+			  </span>
+			</div>
+		  </form>  
+		</div>
+		<br>
+		<br>
+		<!-- TestAngular5 -->
+		<div ng-controller="Html5InputsCtrl" id="Html5InputsCtrl">
+		  <div>Email: <a href="#" editable-email="user.email">{{ user.email || 'empty' }}</a></div>
+		  <div>Tel: <a href="#" editable-tel="user.tel" e-pattern="\d{3}-\d{2}-\d{2}" e-title="xxx-xx-xx">{{ user.tel || 'empty' }}</a></div>
+		  <div>Number: <a href="#" editable-number="user.number" e-min="18">{{ user.number || 'empty' }}</a></div>  
+		  <div>Range: <a href="#" editable-range="user.range" e-step="5">{{ user.range || 'empty' }}</a></div>  
+		  <div>Url: <a href="#" editable-url="user.url">{{ user.url || 'empty' }}</a></div>  
+		  <div>Search: <a href="#" editable-search="user.search">{{ user.search || 'empty' }}</a></div>
+		  <div>Color: <a href="#" editable-color="user.color">{{ user.color || 'empty' }}</a></div>  
+		  <div>Date: <a href="#" editable-date="user.date">{{ (user.date | date: "yyyy-MM-dd") || 'empty' }}</a></div>
+		  <div>Time: <a href="#" editable-time="user.time">{{ (user.time | date: "HH:mm") || 'empty' }}</a></div>
+		  <div>Month: <a href="#" editable-month="user.month">{{ (user.month | date: "yyyy-MM") || 'empty' }}</a></div>
+		  <div>Week: <a href="#" editable-week="user.week">{{ (user.week | date: "yyyy-Www") || 'empty'}}</a></div>
+		  <div>Password: <a href="#" editable-password="user.password">{{ user.password || 'empty' }}</a></div>
+		  <div>Datetime-local: <a href="#" editable-datetime-local="user.datetimeLocal">{{ (user.datetimeLocal | date: "yyyy-MM-ddTHH:mm:ss") || 'empty' }}</a></div>
+		  <div>File: <a href="#" editable-file="user.file">{{ user.file || 'empty' }}</a></div>
+		 </div>
 	</div>
-	<!-- TestAngular2 -->
-	<button type="button" class="btn btn-danger">Danger</button>
-	<!-- TestAngular3 -->
-	<h1>Angular-xeditable Starter Template</h1>
-    <div ng-controller="Ctrl">
-    <!-- editable element -->
-    <a href="#" editable-text="user.name">{{ user.name || "empty" }}</a>
-    <div id="debug">
-    {{ user | json }}
-    </div>
-    </div>
   </body>
 </html>
