@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html ng-app="app">
   <head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>AlphaApp</title>
      <!-- Bootstrap 3 css -->
 	<link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css"/>
 	<link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css"/>
@@ -13,47 +17,199 @@
     <script src="angular-xeditable/js/xeditable.js"></script>
     <!-- app.js -->
     <script src="app.js"></script>
+	<script src="js/sidebar.js" type="text/javascript"></script>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/sidebar.css">
   </head>
   <body>
-	<div class="container">
+    <!-- 
 		<div class="row">
-			<div class="col-sm-4" style="background-color:lavender;">
+			<div class="col-sm-3" style="background-color:lavender;">
 				<br>
 				<br>
-				<!-- TestAngular5 -->
+				<!-- TestAngular5 
 				<div ng-controller="Html5InputsCtrl" id="Html5InputsCtrl">
-				  <div>Email: <a href="#" editable-email="user.email">{{ user.email || 'empty' }}</a></div>
-				  <div>Tel: <a href="#" editable-tel="user.tel" e-pattern="\d{3}-\d{2}-\d{2}" e-title="xxx-xx-xx">{{ user.tel || 'empty' }}</a></div>
-				  <div>Number: <a href="#" editable-number="user.number" e-min="18">{{ user.number || 'empty' }}</a></div>  
-				  <div>Range: <a href="#" editable-range="user.range" e-step="5">{{ user.range || 'empty' }}</a></div>  
-				  <div>Url: <a href="#" editable-url="user.url">{{ user.url || 'empty' }}</a></div>  
-				  <div>Search: <a href="#" editable-search="user.search">{{ user.search || 'empty' }}</a></div>
-				  <div>Color: <a href="#" editable-color="user.color">{{ user.color || 'empty' }}</a></div>  
-				  <div>Date: <a href="#" editable-date="user.date">{{ (user.date | date: "yyyy-MM-dd") || 'empty' }}</a></div>
-				  <div>Time: <a href="#" editable-time="user.time">{{ (user.time | date: "HH:mm") || 'empty' }}</a></div>
-				  <div>Month: <a href="#" editable-month="user.month">{{ (user.month | date: "yyyy-MM") || 'empty' }}</a></div>
-				  <div>Week: <a href="#" editable-week="user.week">{{ (user.week | date: "yyyy-Www") || 'empty'}}</a></div>
-				  <div>Password: <a href="#" editable-password="user.password">{{ user.password || 'empty' }}</a></div>
-				  <div>Datetime-local: <a href="#" editable-datetime-local="user.datetimeLocal">{{ (user.datetimeLocal | date: "yyyy-MM-ddTHH:mm:ss") || 'empty' }}</a></div>
-				  <div>File: <a href="#" editable-file="user.file">{{ user.file || 'empty' }}</a></div>
-				 </div>
+					<div>Email: <a href="#" editable-email="user.email">{{ user.email || 'empty' }}</a></div>
+					<div>Tel: <a href="#" editable-tel="user.tel" e-pattern="\d{3}-\d{2}-\d{2}" e-title="xxx-xx-xx">{{ user.tel || 'empty' }}</a></div>
+					<div>Number: <a href="#" editable-number="user.number" e-min="18">{{ user.number || 'empty' }}</a></div>  
+					<div>Range: <a href="#" editable-range="user.range" e-step="5">{{ user.range || 'empty' }}</a></div>  
+					<div>Url: <a href="#" editable-url="user.url">{{ user.url || 'empty' }}</a></div>  
+					<div>Search: <a href="#" editable-search="user.search">{{ user.search || 'empty' }}</a></div>
+					<div>Color: <a href="#" editable-color="user.color">{{ user.color || 'empty' }}</a></div>  
+					<div>Date: <a href="#" editable-date="user.date">{{ (user.date | date: "yyyy-MM-dd") || 'empty' }}</a></div>
+					<div>Time: <a href="#" editable-time="user.time">{{ (user.time | date: "HH:mm") || 'empty' }}</a></div>
+					<div>Month: <a href="#" editable-month="user.month">{{ (user.month | date: "yyyy-MM") || 'empty' }}</a></div>
+					<div>Week: <a href="#" editable-week="user.week">{{ (user.week | date: "yyyy-Www") || 'empty'}}</a></div>
+					<div>Password: <a href="#" editable-password="user.password">{{ user.password || 'empty' }}</a></div>
+					<div>Datetime-local: <a href="#" editable-datetime-local="user.datetimeLocal">{{ (user.datetimeLocal | date: "yyyy-MM-ddTHH:mm:ss") || 'empty' }}</a></div>
+					<div>File: <a href="#" editable-file="user.file">{{ user.file || 'empty' }}</a></div>
+					<a href="#">About</a>
+					<a href="#">Services</a>
+					<a href="#">Clients</a>
+					<a href="#">Contact</a>
+				</div>
 			</div>
-			<div class="col-sm-8" style="background-color:lightgray;">
+			<div class="col-sm-9" style="background-color:lightgray;">
 			<p>Result is going to be shown here..</p>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
 			</div>
-		</div>
-	</div>
+		</div> 
+	-->
+		<!--
+			this is sidebar
+			size: size of sidebar
+			position: position of sidebar
+	
+		<div class="row">
+			<div class="col-sm-3"">		
+					<div class="sidenav">
+					<div>Time: <a href="#" editable-time="user.time">{{ (user.time | date: "HH:mm") || 'empty' }}</a></div>
+					<div>Month: <a href="#" editable-month="user.month">{{ (user.month | date: "yyyy-MM") || 'empty' }}</a></div>
+					<div>Week: <a href="#" editable-week="user.week">{{ (user.week | date: "yyyy-Www") || 'empty'}}</a></div>
+					<div>Password: <a href="#" editable-password="user.password">{{ user.password || 'empty' }}</a></div>
+					</div>
+			</div>
+			<div class="col-sm-9"">
+					  <h2>Sidenav Example</h2>
+					  <p>This sidenav is always shown.</p>
+			</div>
+		</div> 	
+		-->
+		<main class="wrapper">
+		  <section class="hero">
+			<h1>You thirsty?</h1>
+			<article>
+			  <p>Explore local breweries with just one click and stirred by starlight across the centuries light years great turbulent clouds circumnavigated paroxysm of global death.</p>
+			  <a href="#breweries">Browse Breweries</a>
+			</article>
+		  </section>
+		  <section class="breweries" id="breweries">
+			<ul>
+			  <li>
+				<figure>
+				  <!-- Photo by Quentin Dr on Unsplash -->
+				  <img src="https://images.unsplash.com/photo-1471421298428-1513ab720a8e" alt="Several hands holding beer glasses">
+				  <figcaption><h3>Billions upon billions</h3></figcaption>
+				</figure>
+				<p>
+				  Made in the interiors of collapsing stars star stuff harvesting star light venture billions upon billions Drake Equation brain is the seed of intelligence?
+				</p>
+				<a href="#">Visit Website</a>
+			  </li>
+			  <li>
+				<figure>
+				  <!-- Photo by Drew Farwell on Unsplash -->
+				  <img src="https://images.unsplash.com/photo-1513309914637-65c20a5962e1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3450&q=80" alt="Several friends doing a toast">
+				  <figcaption><h3>Drake Equation</h3></figcaption>
+				</figure>
+				<p>
+				  Another world citizens of distant epochs from which we spring descended from astronomers Orion's sword shores of the cosmic ocean.
+				</p>
+				<a href="#">Visit Website</a>
+			  </li>
+			  <li>
+				<figure>
+				  <!-- Photo by Rawpixel on Unsplash -->
+				  <img src="https://images.unsplash.com/photo-1535359056830-d4badde79747?ixlib=rb-1.2.1&auto=format&fit=crop&w=3402&q=80" alt="Three different glasses of beer">
+				  <figcaption><h3>Vast cosmic arena</h3></figcaption>
+				</figure>
+				<p>
+				  Galaxies the ash of stellar alchemy prime number science inconspicuous motes of rock and gas brain is the seed of intelligence.
+				</p>
+				<a href="#">Visit Website</a>
+			  </li>
+			  			  <li>
+				<figure>
+				  <!-- Photo by Rawpixel on Unsplash -->
+				  <img src="https://images.unsplash.com/photo-1535359056830-d4badde79747?ixlib=rb-1.2.1&auto=format&fit=crop&w=3402&q=80" alt="Three different glasses of beer">
+				  <figcaption><h3>Vast cosmic arena</h3></figcaption>
+				</figure>
+				<p>
+				  Galaxies the ash of stellar alchemy prime number science inconspicuous motes of rock and gas brain is the seed of intelligence.
+				</p>
+				<a href="#">Visit Website</a>
+			  </li>
+			  			  <li>
+				<figure>
+				  <!-- Photo by Rawpixel on Unsplash -->
+				  <img src="https://images.unsplash.com/photo-1535359056830-d4badde79747?ixlib=rb-1.2.1&auto=format&fit=crop&w=3402&q=80" alt="Three different glasses of beer">
+				  <figcaption><h3>Vast cosmic arena</h3></figcaption>
+				</figure>
+				<p>
+				  Galaxies the ash of stellar alchemy prime number science inconspicuous motes of rock and gas brain is the seed of intelligence.
+				</p>
+				<a href="#">Visit Website</a>
+			  </li>
+			  			  <li>
+				<figure>
+				  <!-- Photo by Rawpixel on Unsplash -->
+				  <img src="https://images.unsplash.com/photo-1535359056830-d4badde79747?ixlib=rb-1.2.1&auto=format&fit=crop&w=3402&q=80" alt="Three different glasses of beer">
+				  <figcaption><h3>Vast cosmic arena</h3></figcaption>
+				</figure>
+				<p>
+				  Galaxies the ash of stellar alchemy prime number science inconspicuous motes of rock and gas brain is the seed of intelligence.
+				</p>
+				<a href="#">Visit Website</a>
+			  </li>
+			  			  <li>
+				<figure>
+				  <!-- Photo by Rawpixel on Unsplash -->
+				  <img src="https://images.unsplash.com/photo-1535359056830-d4badde79747?ixlib=rb-1.2.1&auto=format&fit=crop&w=3402&q=80" alt="Three different glasses of beer">
+				  <figcaption><h3>Vast cosmic arena</h3></figcaption>
+				</figure>
+				<p>
+				  Galaxies the ash of stellar alchemy prime number science inconspicuous motes of rock and gas brain is the seed of intelligence.
+				</p>
+				<a href="#">Visit Website</a>
+			  </li>
+			  			  <li>
+				<figure>
+				  <!-- Photo by Rawpixel on Unsplash -->
+				  <img src="https://images.unsplash.com/photo-1535359056830-d4badde79747?ixlib=rb-1.2.1&auto=format&fit=crop&w=3402&q=80" alt="Three different glasses of beer">
+				  <figcaption><h3>Vast cosmic arena</h3></figcaption>
+				</figure>
+				<p>
+				  Galaxies the ash of stellar alchemy prime number science inconspicuous motes of rock and gas brain is the seed of intelligence.
+				</p>
+				<a href="#">Visit Website</a>
+			  </li>
+			  			  <li>
+				<figure>
+				  <!-- Photo by Rawpixel on Unsplash -->
+				  <img src="https://images.unsplash.com/photo-1535359056830-d4badde79747?ixlib=rb-1.2.1&auto=format&fit=crop&w=3402&q=80" alt="Three different glasses of beer">
+				  <figcaption><h3>Vast cosmic arena</h3></figcaption>
+				</figure>
+				<p>
+				  Galaxies the ash of stellar alchemy prime number science inconspicuous motes of rock and gas brain is the seed of intelligence.
+				</p>
+				<a href="#">Visit Website</a>
+			  </li>
+			  			  <li>
+				<figure>
+				  <!-- Photo by Rawpixel on Unsplash -->
+				  <img src="https://images.unsplash.com/photo-1535359056830-d4badde79747?ixlib=rb-1.2.1&auto=format&fit=crop&w=3402&q=80" alt="Three different glasses of beer">
+				  <figcaption><h3>Vast cosmic arena</h3></figcaption>
+				</figure>
+				<p>
+				  Galaxies the ash of stellar alchemy prime number science inconspicuous motes of rock and gas brain is the seed of intelligence.
+				</p>
+				<a href="#">Visit Website</a>
+			  </li>
+			  			  <li>
+				<figure>
+				  <!-- Photo by Rawpixel on Unsplash -->
+				  <img src="https://images.unsplash.com/photo-1535359056830-d4badde79747?ixlib=rb-1.2.1&auto=format&fit=crop&w=3402&q=80" alt="Three different glasses of beer">
+				  <figcaption><h3>Vast cosmic arena</h3></figcaption>
+				</figure>
+				<p>
+				  Galaxies the ash of stellar alchemy prime number science inconspicuous motes of rock and gas brain is the seed of intelligence.
+				</p>
+				<a href="#">Visit Website</a>
+			  </li>
+			</ul>
+		  </section>
+		</main>
+		<footer>
+		  <p>&copy; 2019. Made with ❤ and CSS Grid.</p>
+		</footer>
   </body>
 </html>
